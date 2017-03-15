@@ -1,0 +1,259 @@
+{
+    "caseSensitive": false,
+    "properties": {
+        "name": "SocketServer",
+        "environment": {
+            "type": "noflo-nodejs"
+        }
+    },
+    "inports": {
+        "in": {
+            "process": "core/Split_ln9bc",
+            "port": "in",
+            "metadata": {
+                "x": 180,
+                "y": 252,
+                "width": 72,
+                "height": 72
+            }
+        }
+    },
+    "outports": {
+        "out": {
+            "process": "strings/SendString_o36vt",
+            "port": "out",
+            "metadata": {
+                "x": 972,
+                "y": 108,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "error": {
+            "process": "core/Merge_jskjq",
+            "port": "out",
+            "metadata": {
+                "x": 972,
+                "y": 252,
+                "width": 72,
+                "height": 72
+            }
+        }
+    },
+    "groups": [],
+    "processes": {
+        "webserver/Server_zjs9f": {
+            "component": "webserver/Server",
+            "metadata": {
+                "label": "Server",
+                "x": 324,
+                "y": 108,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "websocket/ListenConnections_x3lg8": {
+            "component": "websocket/ListenConnections",
+            "metadata": {
+                "label": "ListenConnections",
+                "x": 504,
+                "y": 108,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "websocket/SendMessage_nqlii": {
+            "component": "websocket/SendMessage",
+            "metadata": {
+                "label": "SendMessage",
+                "x": 684,
+                "y": 108,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "strings/Jsonify_gu6w5": {
+            "component": "strings/Jsonify",
+            "metadata": {
+                "label": "Jsonify",
+                "x": 504,
+                "y": 252,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "core/Split_ln9bc": {
+            "component": "core/Split",
+            "metadata": {
+                "label": "Split",
+                "x": 324,
+                "y": 252,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "core/Merge_jskjq": {
+            "component": "core/Merge",
+            "metadata": {
+                "label": "Merge",
+                "x": 828,
+                "y": 252,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "strings/SendString_o36vt": {
+            "component": "strings/SendString",
+            "metadata": {
+                "label": "SendString",
+                "x": 828,
+                "y": 108,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "core/Drop_kqdqo": {
+            "component": "core/Drop",
+            "metadata": {
+                "label": "Drop",
+                "x": 504,
+                "y": -36,
+                "width": 72,
+                "height": 72
+            }
+        }
+    },
+    "connections": [
+        {
+            "src": {
+                "process": "websocket/SendMessage_nqlii",
+                "port": "buffered"
+            },
+            "tgt": {
+                "process": "strings/SendString_o36vt",
+                "port": "in"
+            },
+            "metadata": {
+                "route": 3
+            }
+        },
+        {
+            "src": {
+                "process": "core/Split_ln9bc",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "strings/SendString_o36vt",
+                "port": "string"
+            },
+            "metadata": {
+                "route": 2
+            }
+        },
+        {
+            "src": {
+                "process": "strings/Jsonify_gu6w5",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "websocket/SendMessage_nqlii",
+                "port": "string"
+            },
+            "metadata": {
+                "route": 3
+            }
+        },
+        {
+            "src": {
+                "process": "websocket/ListenConnections_x3lg8",
+                "port": "error"
+            },
+            "tgt": {
+                "process": "core/Merge_jskjq",
+                "port": "in"
+            },
+            "metadata": {
+                "route": 1
+            }
+        },
+        {
+            "src": {
+                "process": "webserver/Server_zjs9f",
+                "port": "error"
+            },
+            "tgt": {
+                "process": "core/Merge_jskjq",
+                "port": "in"
+            },
+            "metadata": {
+                "route": 1
+            }
+        },
+        {
+            "src": {
+                "process": "webserver/Server_zjs9f",
+                "port": "server"
+            },
+            "tgt": {
+                "process": "websocket/ListenConnections_x3lg8",
+                "port": "server"
+            },
+            "metadata": {
+                "route": 7
+            }
+        },
+        {
+            "src": {
+                "process": "websocket/ListenConnections_x3lg8",
+                "port": "connection"
+            },
+            "tgt": {
+                "process": "websocket/SendMessage_nqlii",
+                "port": "connection"
+            },
+            "metadata": {
+                "route": 6
+            }
+        },
+        {
+            "src": {
+                "process": "core/Split_ln9bc",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "strings/Jsonify_gu6w5",
+                "port": "in"
+            },
+            "metadata": {
+                "route": 2
+            }
+        },
+        {
+            "src": {
+                "process": "webserver/Server_zjs9f",
+                "port": "request"
+            },
+            "tgt": {
+                "process": "core/Drop_kqdqo",
+                "port": "in"
+            },
+            "metadata": {
+                "route": 9
+            }
+        },
+        {
+            "data": "hono",
+            "tgt": {
+                "process": "websocket/ListenConnections_x3lg8",
+                "port": "protocol"
+            }
+        },
+        {
+            "data": 4445,
+            "tgt": {
+                "process": "webserver/Server_zjs9f",
+                "port": "listen"
+            }
+        }
+    ]
+}

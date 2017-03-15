@@ -1,0 +1,47 @@
+{
+    "caseSensitive": false,
+    "properties": {
+        "name": "main",
+        "environment": {
+            "type": "msgflo"
+        }
+    },
+    "inports": {},
+    "outports": {},
+    "groups": [],
+    "processes": {
+        "xdk.8c8b83e15a2a": {
+            "component": "hono/xdk.8c8b83e15a2a",
+            "metadata": {
+                "label": "XDK",
+                "x": 324,
+                "y": 72,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "SocketServer": {
+            "component": "msgflo-example-bcx17/SocketServer",
+            "metadata": {
+                "label": "SocketServer",
+                "x": 504,
+                "y": 72,
+                "width": 72,
+                "height": 72
+            }
+        }
+    },
+    "connections": [
+        {
+            "src": {
+                "process": "xdk.8c8b83e15a2a",
+                "port": "gyrometer_0"
+            },
+            "tgt": {
+                "process": "SocketServer",
+                "port": "in"
+            },
+            "metadata": {}
+        }
+    ]
+}

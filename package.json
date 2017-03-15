@@ -1,0 +1,47 @@
+{
+  "name": "msgflo-example-bcx17",
+  "version": "1.0.0",
+  "description": "MsgFlo and Hono demo for Bosch Connected Experience 2017",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "./node_modules/.bin/noflo-cache-preheat"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/msgflo/msgflo-example-bcx17.git"
+  },
+  "author": "Henri Bergius <henri.bergius@iki.fi>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/msgflo/msgflo-example-bcx17/issues"
+  },
+  "homepage": "https://github.com/msgflo/msgflo-example-bcx17#readme",
+  "dependencies": {
+    "mqtt": "^2.4.0",
+    "msgflo": "^0.10.6",
+    "msgflo-hono": "^0.1.0",
+    "noflo": "^0.8.3",
+    "noflo-canvas": "^0.2.6",
+    "noflo-dom": "^0.1.1",
+    "noflo-math": "^0.1.1",
+    "noflo-runtime-msgflo": "^0.10.0",
+    "noflo-strings": "^0.3.0",
+    "noflo-webaudio": "^0.2.2",
+    "noflo-webserver": "0.0.6",
+    "noflo-websocket": "^0.1.5"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-noflo-browser": "^1.2.0",
+    "noflo-nodejs": "^0.8.1"
+  },
+  "msgflo": {
+    "variables": {
+      "NOFLO": "node ./node_modules/.bin/noflo-runtime-msgflo --name #ROLE --graph #COMPONENT"
+    },
+    "components": {
+      "msgflo-example-bcx17/SocketServer": "#NOFLO"
+    }
+  }
+}
