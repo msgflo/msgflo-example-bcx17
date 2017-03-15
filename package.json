@@ -25,7 +25,7 @@
     "noflo-canvas": "^0.2.6",
     "noflo-dom": "^0.1.1",
     "noflo-math": "^0.1.1",
-    "noflo-runtime-msgflo": "^0.10.0",
+    "noflo-runtime-msgflo": "^0.11.1",
     "noflo-strings": "^0.3.0",
     "noflo-webaudio": "^0.2.2",
     "noflo-webserver": "0.0.6",
