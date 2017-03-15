@@ -1,0 +1,650 @@
+{
+    "caseSensitive": false,
+    "properties": {
+        "name": "Theremin",
+        "environment": {
+            "type": "noflo-browser",
+            "content": "<canvas id=\"canvas\" width=\"500\" height=\"500\"></canvas>"
+        },
+        "icon": ""
+    },
+    "inports": {},
+    "outports": {},
+    "groups": [
+        {
+            "name": "Hono Communications",
+            "nodes": [
+                "AbsoluteY",
+                "AbsoluteZ",
+                "GetY",
+                "GetZ",
+                "strings/ParseJson_6jt18",
+                "ServerConnection",
+                "websocket/ListenMessages_aic29"
+            ],
+            "metadata": {
+                "description": ""
+            }
+        },
+        {
+            "name": "Audio",
+            "nodes": [
+                "webaudio/Gain_n2ayk",
+                "webaudio/Oscillator_lgiq2",
+                "webaudio/Play_hor"
+            ],
+            "metadata": {
+                "description": ""
+            }
+        },
+        {
+            "name": "Canvas",
+            "nodes": [
+                "canvas/Draw_9bur1",
+                "canvas/MakeCircle_ivyay",
+                "canvas/MakeColor_6s0yl",
+                "canvas/MakePoint_i4u1e",
+                "canvas/Stroke_ytago",
+                "dom/GetElement_w9yer"
+            ],
+            "metadata": {
+                "description": ""
+            }
+        }
+    ],
+    "processes": {
+        "ServerConnection": {
+            "component": "websocket/Connect",
+            "metadata": {
+                "label": "ServerConnection",
+                "x": -216,
+                "y": 468,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "dom/GetElement_w9yer": {
+            "component": "dom/GetElement",
+            "metadata": {
+                "label": "GetElement",
+                "x": 1008,
+                "y": -108,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "canvas/MakeColor_6s0yl": {
+            "component": "canvas/MakeColor",
+            "metadata": {
+                "label": "MakeColor",
+                "x": 864,
+                "y": 72,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "canvas/MakePoint_i4u1e": {
+            "component": "canvas/MakePoint",
+            "metadata": {
+                "label": "MakePoint",
+                "x": 756,
+                "y": -108,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "canvas/MakeCircle_ivyay": {
+            "component": "canvas/MakeCircle",
+            "metadata": {
+                "label": "MakeCircle",
+                "x": 864,
+                "y": -108,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "canvas/Stroke_ytago": {
+            "component": "canvas/Stroke",
+            "metadata": {
+                "label": "Stroke",
+                "x": 1008,
+                "y": 36,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "canvas/Draw_9bur1": {
+            "component": "canvas/Draw",
+            "metadata": {
+                "label": "Draw",
+                "x": 1152,
+                "y": 36,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "webaudio/Oscillator_lgiq2": {
+            "component": "webaudio/Oscillator",
+            "metadata": {
+                "label": "Oscillator",
+                "x": 756,
+                "y": 468,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "webaudio/Gain_n2ayk": {
+            "component": "webaudio/Gain",
+            "metadata": {
+                "label": "Gain",
+                "x": 972,
+                "y": 288,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "webaudio/Play_hor": {
+            "component": "webaudio/Play",
+            "metadata": {
+                "label": "Play",
+                "x": 1152,
+                "y": 288,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "websocket/ListenMessages_aic29": {
+            "component": "websocket/ListenMessages",
+            "metadata": {
+                "label": "ListenMessages",
+                "x": 108,
+                "y": 288,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "Errors": {
+            "component": "core/Merge",
+            "metadata": {
+                "label": "Errors",
+                "x": 1368,
+                "y": 432,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "strings/ParseJson_6jt18": {
+            "component": "strings/ParseJson",
+            "metadata": {
+                "label": "ParseJson",
+                "x": 252,
+                "y": 288,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "core/Output_l6dnz": {
+            "component": "core/Output",
+            "metadata": {
+                "label": "Output",
+                "x": 1476,
+                "y": 432,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "GetZ": {
+            "component": "objects/GetObjectKey",
+            "metadata": {
+                "label": "GetZ",
+                "x": 396,
+                "y": 108,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "GetY": {
+            "component": "objects/GetObjectKey",
+            "metadata": {
+                "label": "GetY",
+                "x": 396,
+                "y": 252,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "AbsoluteZ": {
+            "component": "bcx17/AbsoluteValues",
+            "metadata": {
+                "label": "AbsoluteZ",
+                "x": 504,
+                "y": 108,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "AbsoluteY": {
+            "component": "bcx17/AbsoluteValues",
+            "metadata": {
+                "label": "AbsoluteY",
+                "x": 504,
+                "y": 252,
+                "width": 72,
+                "height": 72
+            }
+        }
+    },
+    "connections": [
+        {
+            "src": {
+                "process": "canvas/MakePoint_i4u1e",
+                "port": "point"
+            },
+            "tgt": {
+                "process": "canvas/MakeCircle_ivyay",
+                "port": "center"
+            },
+            "metadata": {}
+        },
+        {
+            "src": {
+                "process": "canvas/MakeCircle_ivyay",
+                "port": "circle"
+            },
+            "tgt": {
+                "process": "canvas/Stroke_ytago",
+                "port": "items"
+            },
+            "metadata": {}
+        },
+        {
+            "src": {
+                "process": "canvas/Stroke_ytago",
+                "port": "stroke"
+            },
+            "tgt": {
+                "process": "canvas/Draw_9bur1",
+                "port": "commands"
+            },
+            "metadata": {}
+        },
+        {
+            "src": {
+                "process": "dom/GetElement_w9yer",
+                "port": "element"
+            },
+            "tgt": {
+                "process": "canvas/Draw_9bur1",
+                "port": "canvas"
+            },
+            "metadata": {}
+        },
+        {
+            "src": {
+                "process": "canvas/MakeColor_6s0yl",
+                "port": "color"
+            },
+            "tgt": {
+                "process": "canvas/Stroke_ytago",
+                "port": "strokestyle"
+            },
+            "metadata": {}
+        },
+        {
+            "src": {
+                "process": "webaudio/Oscillator_lgiq2",
+                "port": "oscillator"
+            },
+            "tgt": {
+                "process": "webaudio/Gain_n2ayk",
+                "port": "audionodes"
+            },
+            "metadata": {}
+        },
+        {
+            "src": {
+                "process": "webaudio/Gain_n2ayk",
+                "port": "gain"
+            },
+            "tgt": {
+                "process": "webaudio/Play_hor",
+                "port": "audionodes"
+            },
+            "metadata": {}
+        },
+        {
+            "src": {
+                "process": "ServerConnection",
+                "port": "connection"
+            },
+            "tgt": {
+                "process": "websocket/ListenMessages_aic29",
+                "port": "connection"
+            },
+            "metadata": {
+                "route": 2
+            }
+        },
+        {
+            "src": {
+                "process": "ServerConnection",
+                "port": "error"
+            },
+            "tgt": {
+                "process": "Errors",
+                "port": "in"
+            },
+            "metadata": {
+                "route": 1
+            }
+        },
+        {
+            "src": {
+                "process": "websocket/ListenMessages_aic29",
+                "port": "string"
+            },
+            "tgt": {
+                "process": "strings/ParseJson_6jt18",
+                "port": "in"
+            },
+            "metadata": {
+                "route": 7
+            }
+        },
+        {
+            "src": {
+                "process": "strings/ParseJson_6jt18",
+                "port": "error"
+            },
+            "tgt": {
+                "process": "Errors",
+                "port": "in"
+            },
+            "metadata": {
+                "route": 1
+            }
+        },
+        {
+            "src": {
+                "process": "canvas/Draw_9bur1",
+                "port": "error"
+            },
+            "tgt": {
+                "process": "Errors",
+                "port": "in"
+            },
+            "metadata": {
+                "route": 1
+            }
+        },
+        {
+            "src": {
+                "process": "Errors",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "core/Output_l6dnz",
+                "port": "in"
+            },
+            "metadata": {
+                "route": 1
+            }
+        },
+        {
+            "src": {
+                "process": "strings/ParseJson_6jt18",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "GetZ",
+                "port": "in"
+            },
+            "metadata": {
+                "route": 7
+            }
+        },
+        {
+            "src": {
+                "process": "strings/ParseJson_6jt18",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "GetY",
+                "port": "in"
+            },
+            "metadata": {
+                "route": 7
+            }
+        },
+        {
+            "src": {
+                "process": "AbsoluteZ",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "canvas/MakeColor_6s0yl",
+                "port": "lightness"
+            },
+            "metadata": {
+                "route": 6
+            }
+        },
+        {
+            "src": {
+                "process": "GetZ",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "AbsoluteZ",
+                "port": "in"
+            },
+            "metadata": {
+                "route": 6
+            }
+        },
+        {
+            "src": {
+                "process": "AbsoluteZ",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "webaudio/Gain_n2ayk",
+                "port": "gain"
+            },
+            "metadata": {
+                "route": 6
+            }
+        },
+        {
+            "src": {
+                "process": "AbsoluteZ",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "canvas/MakePoint_i4u1e",
+                "port": "x"
+            },
+            "metadata": {
+                "route": 6
+            }
+        },
+        {
+            "src": {
+                "process": "GetY",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "AbsoluteY",
+                "port": "in"
+            },
+            "metadata": {
+                "route": 5
+            }
+        },
+        {
+            "src": {
+                "process": "AbsoluteY",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "webaudio/Oscillator_lgiq2",
+                "port": "frequency"
+            },
+            "metadata": {
+                "route": 5
+            }
+        },
+        {
+            "src": {
+                "process": "AbsoluteY",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "canvas/MakePoint_i4u1e",
+                "port": "y"
+            },
+            "metadata": {
+                "route": 5
+            }
+        },
+        {
+            "src": {
+                "process": "AbsoluteY",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "canvas/MakeCircle_ivyay",
+                "port": "radius"
+            },
+            "metadata": {
+                "route": 5
+            }
+        },
+        {
+            "data": "hono",
+            "tgt": {
+                "process": "ServerConnection",
+                "port": "protocol"
+            }
+        },
+        {
+            "data": "#canvas",
+            "tgt": {
+                "process": "dom/GetElement_w9yer",
+                "port": "selector"
+            }
+        },
+        {
+            "data": 200,
+            "tgt": {
+                "process": "canvas/MakeColor_6s0yl",
+                "port": "hue"
+            }
+        },
+        {
+            "data": 100,
+            "tgt": {
+                "process": "canvas/MakeColor_6s0yl",
+                "port": "saturation"
+            }
+        },
+        {
+            "data": 80,
+            "tgt": {
+                "process": "canvas/MakeColor_6s0yl",
+                "port": "lightness"
+            }
+        },
+        {
+            "data": 0.1,
+            "tgt": {
+                "process": "canvas/MakeColor_6s0yl",
+                "port": "alpha"
+            }
+        },
+        {
+            "data": 10,
+            "tgt": {
+                "process": "canvas/MakeCircle_ivyay",
+                "port": "radius"
+            }
+        },
+        {
+            "data": "#fff",
+            "tgt": {
+                "process": "canvas/Stroke_ytago",
+                "port": "strokestyle"
+            }
+        },
+        {
+            "data": 2,
+            "tgt": {
+                "process": "canvas/Stroke_ytago",
+                "port": "linewidth"
+            }
+        },
+        {
+            "data": true,
+            "tgt": {
+                "process": "canvas/Draw_9bur1",
+                "port": "drawevery"
+            }
+        },
+        {
+            "data": false,
+            "tgt": {
+                "process": "canvas/Draw_9bur1",
+                "port": "clearevery"
+            }
+        },
+        {
+            "data": "sine",
+            "tgt": {
+                "process": "webaudio/Oscillator_lgiq2",
+                "port": "waveform"
+            }
+        },
+        {
+            "data": 0,
+            "tgt": {
+                "process": "webaudio/Oscillator_lgiq2",
+                "port": "start"
+            }
+        },
+        {
+            "data": "ws://localhost:4445",
+            "tgt": {
+                "process": "ServerConnection",
+                "port": "url"
+            }
+        },
+        {
+            "data": false,
+            "tgt": {
+                "process": "GetZ",
+                "port": "sendgroup"
+            }
+        },
+        {
+            "data": "z_value",
+            "tgt": {
+                "process": "GetZ",
+                "port": "key"
+            }
+        },
+        {
+            "data": "x_value",
+            "tgt": {
+                "process": "GetY",
+                "port": "key"
+            }
+        },
+        {
+            "data": false,
+            "tgt": {
+                "process": "GetY",
+                "port": "sendgroup"
+            }
+        }
+    ]
+}
