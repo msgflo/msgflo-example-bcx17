@@ -214,7 +214,7 @@
             }
         },
         "AbsoluteZ": {
-            "component": "bcx17/AbsoluteValues",
+            "component": "msgflo-example-bcx17/AbsoluteValues",
             "metadata": {
                 "label": "AbsoluteZ",
                 "x": 504,
@@ -224,7 +224,7 @@
             }
         },
         "AbsoluteY": {
-            "component": "bcx17/AbsoluteValues",
+            "component": "msgflo-example-bcx17/AbsoluteValues",
             "metadata": {
                 "label": "AbsoluteY",
                 "x": 504,
